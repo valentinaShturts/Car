@@ -93,12 +93,14 @@ double Car::GetPrice()
 
 void Car::SetModel(const char* m)
 {
+	if (this->model != nullptr) delete[] this->model;
 	this->model = new char[strlen(m) + 1];
 	strcpy_s(this->model, strlen(m) + 1, m);
 }
 
 void Car::SetColor(const char* c)
 {
+	if (this->color != nullptr) delete[] this->color;
 	this->color = new char[strlen(c) + 1];
 	strcpy_s(this->color, strlen(c) + 1, c);
 }
